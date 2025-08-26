@@ -75,6 +75,16 @@ if (!class_exists('WPP_Rank_Math')) {
                         }
                     }
                 }
+
+                // Fix datePublished and dateModified for BlogPosting
+                if (isset($item['@type']) && ($item['@type'] === 'BlogPosting' || $item['@type'] === 'Article')) {
+                    if (!empty($item['datePublished'])) {
+                        $data[$key]['datePublished'] = $this->convert_date_time($item['datePublished']);
+                    }
+                    if (!empty($item['dateModified'])) {
+                        $data[$key]['dateModified'] = $this->convert_date_time($item['dateModified']);
+                    }
+                }
             }
 
             return $data;
