@@ -32,7 +32,7 @@ code {
 
 body#tinymce.wp-editor,
 .rtl .editor-styles-wrapper,
-.rtl .edit-post-visual-editor *,
+.rtl .edit-post-visual-editor *:not(.dashicons),
 .rtl .components-notice__content,
 #wpseo_meta *,
 .edit-post-sidebar *,
